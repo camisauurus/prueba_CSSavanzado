@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  font-family: open sans;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+}
+
+header {
+  grid-area: header;
+  background-color: #f6e6c7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header p {
+  font-size: 14px;
+  color: #523221;
+}
+
+.logo {
+  height: 60px;
+  margin: 0.5em;
+}
+
+nav {
+  grid-area: nav;
+  background-color: #523221;
+  color: #f6e6c7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #f6e6c7;
+}
+
+nav a:hover {
+  color: #ad5d32;
+}
+
+main h2 {
+  margin: 0.6em;
+  color: #523221;
+}
+
+.categorias {
+  display: flex;
+  justify-content: space-between;
+}
+
+main {
+  grid-area: main;
+}
+
+.cards {
+  background-color: white;
+  width: 80%;
+  border: 1px solid #5232214b;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  margin: 10px;
+}
+
+.cards:hover {
+    box-shadow: 0 0 20px #5232214b;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+.cards img {
+  height: 100%;
+  border-radius: 4px;
+  transition: filter 0.5s ease-in-out;
+}
+
+.cards:has(input:checked) img {
+    filter: grayscale(100%)
+}
+
+.boton {
+  background-color: #523221;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.5em;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #e5e5e5;
+  color: #523221;
+  font-size: 14px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  fill: #523221;
+  width: 22px;
+}
+
+@media (min-width: 576px) {
+  .container {
+    grid-template-areas:
+      "header header"
+      "nav main"
+      "footer footer";
+    grid-template-columns: 1fr 7fr;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    gap: 10px;
+  }
+
+  .categorias {
+    flex-direction: column;
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-areas:
+      "titulo"
+      "novelas"
+      "titulo2"
+      "fantasia"
+      "titulo3"
+      "poesia";
+  }
+
+  .titulo {
+    grid-area: titulo;
+  }
+
+  .novelas {
+    grid-area: novelas;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .titulo2 {
+    grid-area: titulo2;
+  }
+
+  .fantasia {
+    grid-area: fantasia;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .titulo3 {
+    grid-area: titulo3;
+  }
+
+  .poesia {
+    grid-area: poesia;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  footer {
+    align-items: center;
+    justify-content: center;
+  }
+}
